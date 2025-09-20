@@ -10,10 +10,9 @@ export default function Button({
     className = "",
     ...props
 }: ButtonProps) {
-    const base =
-        "w-full px-4 py-2 rounded font-semibold transition-colors duration-200";
+    const base = "w-full px-4 py-3 rounded-md font-semibold transition-colors duration-200";
     const variants = {
-        primary: "bg-blue-600 text-white hover:bg-blue-700",
+        primary: "bg-primary text-white hover:bg-primary-dark",
         secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
     };
 
