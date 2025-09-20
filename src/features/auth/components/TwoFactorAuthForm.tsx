@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "@tanstack/react-router";
-
 import Button from "../../../components/ui/Button";
 import OtpInput from "./OtpInput";
 import FormHeader from "./FormHeader";
@@ -52,7 +51,6 @@ export default function TwoFactorAuthForm() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="w-full max-w-md space-y-6"
             >
-                {/* Header */}
                 <div className="text-left">
                     <FormHeader
                         title="Two-Factor Authentication"
@@ -61,30 +59,22 @@ export default function TwoFactorAuthForm() {
                     <hr className="border-gray-300 mt-2" />
                 </div>
 
-                {/* OTP info */}
                 <div className="text-left">
                     <OtpInfo maskedEmail={maskedEmail} />
                 </div>
 
-                {/* OTP Inputs */}
-                {/* OTP Inputs */}
                 <div className="text-center md:text-left">
                     <OtpInput register={register} name="otpCode" />
                 </div>
 
-
-
-                {/* Timer */}
                 <p className="text-sm text-gray-500 mt-2 text-center">
                     Code expires in: {formatTime(timeLeft)}
                 </p>
 
-                {/* Submit button */}
                 <Button type="submit" className="w-full">
                     Verify Code
                 </Button>
 
-                {/* Resend link */}
                 <div className="text-center text-sm">
                     <p className="text-gray-500">
                         Didn't receive the code?

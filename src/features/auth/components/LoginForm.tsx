@@ -24,19 +24,17 @@ export default function LoginForm() {
 
     const onSubmit = (data: LoginSchemaType) => {
         console.log("Form data is valid:", data);
-        // Use the navigate function to go to the '/otp' route
         navigate({ to: "/otp" });
     };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg space-y-6">
-           <FormHeader
+            <FormHeader
                 title="Welcome to the Invoicing Portal"
                 subtitle="To get started, please set up your password and secure your account with two-factor authentication (2FA)."
             />
 
             <div className="space-y-4">
-                {/* Email */}
                 <Input
                     type="email"
                     label="Email"
@@ -45,14 +43,12 @@ export default function LoginForm() {
                     error={errors.email?.message}
                 />
 
-                {/* Password */}
                 <PasswordField
                     label="Password"
                     register={register("password")}
                     error={errors.password?.message}
                 />
 
-                {/* Confirm Password */}
                 <PasswordField
                     label="Confirm Password"
                     register={register("confirmPassword")}
